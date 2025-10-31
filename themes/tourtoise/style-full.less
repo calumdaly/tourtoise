@@ -1,0 +1,532 @@
+/*
+Theme Name: TourToise Theme
+Template: twentytwentyfive
+Description: TourToise theme
+Author: Calum Daly
+Version: 1.0
+License: GNU General Public License v2 or later
+*/
+
+
+/*********************************************/
+
+
+/* CONTENTS */
+
+/* 
+// i) Imports + Variables
+//
+//
+// 1) General / Sitewide styling
+//
+// 2) Site Header
+//
+// 2) Homepage overrides
+//
+// 3) Breadcrumbs
+//
+// 4) Content Cards
+//
+// 5) Playlist Page
+//
+//
+/*
+
+/*********************************************/
+
+
+/* i) Imports + Variables */
+//Outfit
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap');
+
+//Open Sans
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+//font variables
+@heading-font-family:"Outfit",'Helvetica Neue',Helvetica,Arial,sans-serif;
+@primary-font-family:"Open Sans",'Helvetica Neue',Helvetica,Arial,sans-serif;
+@body-font:400 1rem/150% @primary-font-family;
+@body-font-emphasis:600 1rem/150% @primary-font-family;
+
+//colour variables
+@primary-white: #fff;
+@primary-black: #3A3A3A;
+@primary-green: #A0C1B9;
+@primary-light-green: #D4EDE7;
+@primary-pop-green: #74FFDE;
+@primary-pop-green-dark: #60E3C4;
+@primary-blue: #89A1EF;
+@primary-light-blue: #B7C6F5;
+@primary-teal: #70A0AF;
+@primary-purple: #706993;
+@primary-cream: #FFFEF4;
+@primary-dark-cream: #EBEAE1;
+
+@secondary-teal: #308BA7;
+@secondary-red: #EABBBB;
+
+//other styling variables
+@large-border-radius: 20px;
+@small-border-radius: 10px;
+
+
+
+/* ===[ 1) General / Sitewide ]===================================================== */
+html{
+    font-size: 16px;
+}
+
+body {
+    font: @body-font;
+    background-color: @primary-blue;
+    color: @primary-black;
+}
+
+.tourtoise_main_content_wrapper{
+    max-width: 1140px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+//headings + text elements
+h1{
+    font:700 2.25rem @heading-font-family;
+}
+
+h2{
+    font:700 1.6rem @primary-font-family;
+}
+
+h3{
+    font:600 1.2rem @primary-font-family;
+}
+
+p{
+    font: 400 1rem @body-font;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    font: 600 1.2rem @heading-font-family;
+    color: @primary-black;
+    background-color: @primary-light-green;
+    padding: 15px 30px;
+    border-radius: @small-border-radius;
+
+    &:hover{
+        background-color: @primary-green;
+    }
+}
+
+img{
+    width:100%;
+}
+
+.screen_reader_content{
+  position: absolute;
+  width: 1px;
+  left: -10000px;
+}
+
+
+/* ===[ 2) Site Header ]===================================================== */
+.tourtoise_header_wrapper{
+    max-width: 1140px;
+    margin: auto;
+
+    .tourtoise_header{
+        .tourtoise_header_logo{
+            a{
+                background-color: unset;
+                padding: unset;
+                img{
+                    width: 325px;
+                }
+            }
+        }
+
+        .tourtoise_header_text{
+            h2{
+                max-width: 300px;
+                color: @primary-white;
+                font: 700 2.25rem @heading-font-family;
+            }
+        }
+
+        //desktop nav
+        .tourtoise_header_nav{
+            max-width: 380px;
+            align-items: center;
+
+            ul{
+                display: flex;
+                list-style-type: none;
+                justify-content: space-between;
+                padding:unset;
+                margin: unset;
+            }
+        }
+
+        //mobile nav
+        .tourtoise_header_nav_mobile{
+            display: none;
+        }
+    }
+}
+
+//mobile menu content
+.tourtoise_header_nav_mobile_content_wrapper{
+    display: none;
+}
+
+@media only screen and (max-width: 1040px) {
+    .tourtoise_header_wrapper{
+        .tourtoise_header{
+            .tourtoise_header_text{
+                display: none;
+            }
+
+            .tourtoise_header_nav{
+                display: flex;
+                align-items: center;
+
+                ul{
+                    display: flex;
+                    gap: 20px;
+                    list-style-type: none;
+                    justify-content: space-between;
+                    padding:unset;
+                    margin: unset;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .tourtoise_header_wrapper{
+        .tourtoise_header{
+
+            .tourtoise_header_logo{
+                a{
+                    img{
+                        width: 100%;
+                        max-width: 325px;
+
+                    }
+                }
+            }
+
+            .tourtoise_header_text{
+                display: none;
+            }
+
+            //desktop nav
+            .tourtoise_header_nav{
+                display: none;
+            }
+
+            //mobile nav
+            .tourtoise_header_nav_mobile{
+                max-width: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: end;
+
+                .tourtoise_header_nav_mobile_buttons{
+                    cursor: pointer;
+
+                    button{
+                        background: unset;
+                        border: unset;
+                    }
+
+                    svg{
+                        max-width: 50px;
+                        fill: @primary-cream;
+                    }
+
+                    .tourtoise_header_nav_mobile_buttons_open{
+                        display: block;
+                    }
+
+                    .tourtoise_header_nav_mobile_buttons_close{
+                        display: none;
+                    }
+                }
+                
+                &.active{
+                    .tourtoise_header_nav_mobile_buttons{
+                        .tourtoise_header_nav_mobile_buttons_open{
+                            display: none;
+                        }
+
+                        .tourtoise_header_nav_mobile_buttons_close{
+                            display: block;
+                        }
+                    } 
+                }
+            }
+        }
+    }
+
+
+    //mobile menu content
+    .tourtoise_header_nav_mobile_content_wrapper{
+        display: block;
+        background-color: @primary-light-blue;
+        max-height: 0;
+        margin-top: 0;
+        overflow: hidden;
+
+        .tourtoise_header_nav_mobile_content{
+            ul{
+                display: flex;
+                flex-direction: column;
+                list-style-type: none;
+                justify-content: end;
+                text-align: end;
+                gap:20px;
+                margin: unset;
+                padding: 20px 0px;
+
+                a{
+                    background-color: @primary-purple;
+                    color: @primary-cream;
+
+                    &:hover{
+                        background-color: @primary-teal;
+                        // color: @primary-black;
+                    }
+                }
+            }
+        }
+
+        transition: max-height 0.5s, margin-top 0.7s;
+
+        &.active{
+            max-height: 180px;
+            margin-top: 20px;
+        }
+    }
+}
+
+
+
+/* ===[ 3) Homepage overrides ]===================================================== */
+.home{
+    background-color: @primary-light-green;
+
+    .tourtoise_header_wrapper{
+        .tourtoise_header{
+            .tourtoise_header_text{
+                h2{
+                    color: @primary-purple;
+                }
+            }
+
+            .tourtoise_header_nav{
+                a{
+                    background-color: @primary-light-blue;
+
+                    &:hover{
+                        background-color: @primary-blue;
+                    }
+                }  
+            }
+
+            //mobile nav
+            .tourtoise_header_nav_mobile{
+                .tourtoise_header_nav_mobile_buttons{
+                    svg{
+                        fill: @primary-black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+/* ===[ 4) Breadcrumbs ]===================================================== */
+.tourtoise_breadcrumb_wrapper{
+    max-width: 1140px;
+    margin: auto;
+    margin-top: 40px;
+    text-align: start;
+
+    .tourtoise_breadcrumb_row{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap:20px;
+
+        .tourtoise_breadcrumb{
+            font: @body-font-emphasis;
+            background-color: @primary-light-blue;
+            padding: 10px 20px;
+
+            &:hover{
+                background-color: @primary-cream;
+            }
+        }
+    }
+}
+
+
+
+/* ===[ 5) Content Cards ]===================================================== */
+.tourtoise_content_card_wrapper{
+    margin-top: 40px;
+
+    .tourtoise_content_card_row{
+        background-color: @primary-cream;
+        border-radius: @large-border-radius;
+
+        .insert-page{
+            max-width: 33.33%;
+            min-height: 500px;
+            padding: 10px;
+            
+            .tourtoise_content_card{
+                width: 100%;
+                height: 100%;
+                background-size: cover !important;
+                background-position: center !important;
+                border-radius: @large-border-radius;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding:20px;
+
+                .row{
+                    width: 100%;
+                    justify-content: end;
+                    bottom: 0;
+                }
+
+                .tourtoise_content_card_copy{
+                    div{
+                        width: auto;
+                        margin-bottom: 10px;
+                        background-color: @primary-cream;
+                        border-radius: @small-border-radius;
+                        padding: 10px;
+                    }
+
+                    .tourtoise_content_card_copy_duration{
+                        background-color: @primary-light-green;
+                        font: @body-font-emphasis;
+
+                        svg{
+                            margin-right: 5px;
+                        }
+                    }
+                }
+
+                .tourtoise_content_card_details_content{
+                    background-color: @primary-light-green;
+                    color: @primary-black;
+                    font: @body-font;
+                    border-radius: @small-border-radius;
+                    padding:0px 10px;
+                    max-height: 0px;
+                    margin-bottom: 0px;
+                    overflow: hidden;
+
+
+                    transition: padding 0.7s, max-height 0.8s, margin-bottom 0.8s;
+
+                    &.active{
+                        padding:10px;
+                        max-height: 250px;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                .tourtoise_content_card_buttons{
+                    .tourtoise_details_button{
+                        text-align: left;
+                        background: unset;
+                        border: unset;
+                        color: @primary-cream;
+                        font: @body-font-emphasis;
+
+                        .tourtoise_details_button_icon{
+                            svg{
+                                transform: rotate(0deg);
+                                transition: transform 0.3s;
+                            }
+                        }
+
+                        &.active{
+                            .tourtoise_details_button_icon{
+                                svg{
+                                    transform: rotate(45deg);
+                                }
+                            }
+                        }
+                    }
+
+                    a{
+                        background-color: @primary-pop-green;
+
+                        &:hover{
+                            background-color: @primary-pop-green-dark;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .tourtoise_content_card_wrapper{
+        .tourtoise_content_card_row{
+            .insert-page{
+                max-width: 50%;
+            }
+            
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .tourtoise_content_card_wrapper{
+        .tourtoise_content_card_row{
+            .insert-page{
+                max-width: 100%;
+            }
+            
+        }
+    }
+}
+
+
+/* ===[ 6) Playlist Page ]===================================================== */
+.tourtoise_page_intro_wrapper{
+    .tourtoise_page_title{
+        h1{
+            display:inline-block;
+            background-color: @primary-cream;
+            margin-bottom: unset;
+            padding: 20px 40px;
+            border-radius: @large-border-radius;
+        }
+    }
+
+    .tourtoise_page_details{
+        margin-top: 20px;
+        background-color: @primary-cream;
+        color: @primary-black;
+        border-radius: @large-border-radius;
+        padding: 20px;
+    }
+}
