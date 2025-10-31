@@ -21,13 +21,15 @@ License: GNU General Public License v2 or later
 //
 // 2) Site Header
 //
-// 2) Homepage overrides
+// 3) Homepage overrides
 //
-// 3) Breadcrumbs
+// 4) Breadcrumbs
 //
-// 4) Content Cards
+// 5) Content Cards
 //
-// 5) Playlist Page
+// 6) Playlist Page
+//
+// 7) Stop Cards
 //
 //
 /*
@@ -75,65 +77,67 @@ License: GNU General Public License v2 or later
 html{
     font-size: 16px;
     min-width: 390px;
-}
 
-body {
-    font: @body-font;
-    background-color: @primary-blue;
-    color: @primary-black;
-}
+    body {
+        font: @body-font;
+        background-color: @primary-blue;
+        color: @primary-black;
+    }
 
-.tourtoise_main_content_wrapper{
-    max-width: 1140px;
-    margin: auto;
-    margin-top: 40px;
-}
+    .tourtoise_main_content_wrapper{
+        max-width: 1140px;
+        margin: auto;
+        margin-top: 40px;
+    }
 
-//headings + text elements
-h1, h2, h3, h4{
-    display: inline-block;
-    margin-bottom: unset;
-}
+    //headings + text elements
+    h1, h2, h3, h4{
+        display: inline-block;
+        margin-bottom: unset;
+    }
 
-h1{
-    font:700 2.25rem @heading-font-family;
-}
+    h1{
+        font:700 2.25rem @heading-font-family;
+    }
 
-h2{
-    font:700 1.6rem @primary-font-family;
-}
+    h2{
+        font:700 1.6rem @primary-font-family;
+    }
 
-h3{
-    font:600 1.2rem @primary-font-family;
-}
+    h3{
+        font:600 1.2rem @primary-font-family;
+    }
 
-p{
-    font: 400 1rem @body-font;
-}
+    p{
+        font: 400 1rem @body-font;
+    }
 
-a{
-    display: inline-block;
-    text-decoration: none;
-    font: 600 1.2rem @heading-font-family;
-    color: @primary-black;
-    background-color: @primary-light-green;
-    padding: 15px 30px;
-    border-radius: @small-border-radius;
+    a{
+        display: inline-block;
+        text-decoration: none;
+        font: 600 1.2rem @heading-font-family;
+        color: @primary-black;
+        background-color: @primary-light-green;
+        padding: 15px 30px;
+        border-radius: @small-border-radius;
 
-    &:hover{
-        background-color: @primary-green;
+        &:hover{
+            background-color: @primary-green;
+        }
+    }
+
+    img{
+        width:100%;
+    }
+
+    .screen_reader_content{
+    position: absolute;
+    width: 1px;
+    left: -10000px;
     }
 }
 
-img{
-    width:100%;
-}
 
-.screen_reader_content{
-  position: absolute;
-  width: 1px;
-  left: -10000px;
-}
 
 
 /* ===[ 2) Site Header ]===================================================== */
@@ -162,13 +166,14 @@ img{
 
         //desktop nav
         .tourtoise_header_nav{
-            max-width: 350px;
             align-items: center;
+            min-width: 355px;
 
             ul{
                 display: flex;
                 list-style-type: none;
-                justify-content: space-between;
+                justify-content: end;
+                gap: 20px;
                 padding:unset;
                 margin: unset;
             }
@@ -186,7 +191,8 @@ img{
     display: none;
 }
 
-@media only screen and (max-width: 1040px) {
+//menu at tablet size
+@media only screen and (max-width: 1060px) {
     .tourtoise_header_wrapper{
         .tourtoise_header{
             .tourtoise_header_text{
@@ -196,21 +202,13 @@ img{
             .tourtoise_header_nav{
                 display: flex;
                 align-items: center;
-
-                ul{
-                    display: flex;
-                    gap: 20px;
-                    list-style-type: none;
-                    justify-content: space-between;
-                    padding:unset;
-                    margin: unset;
-                }
+                justify-content: end;
             }
         }
     }
 }
 
-
+//menu at mobile size
 @media only screen and (max-width: 768px) {
     .tourtoise_header_wrapper{
         .tourtoise_header{
@@ -386,6 +384,7 @@ img{
 
 
 
+
 /* ===[ 5) Content Cards ]===================================================== */
 .tourtoise_content_card_wrapper{
     margin-top: 40px;
@@ -535,23 +534,101 @@ img{
 }
 
 
+
+
 /* ===[ 6) Playlist Page ]===================================================== */
 .tourtoise_page_intro_wrapper{
-    .tourtoise_page_title{
-        h1{
-            display:inline-block;
-            background-color: @primary-cream;
-            margin-bottom: unset;
-            padding: 20px 40px;
-            border-radius: @large-border-radius;
+    .tourtoise_page_intro_top{
+        align-items: end;
+        justify-content: flex-start;
+        gap:20px;
+
+        & > div{
+            display: inline-block;
+            width: auto;
         }
+
+        .tourtoise_page_title{
+            h1{
+                background-color: @primary-cream;
+                margin-bottom: unset;
+                padding: 20px 40px;
+                border-radius: @large-border-radius;
+            }
+        }
+
+        .tourtoise_page_tour_duration{
+            span{
+                display: block;
+                background-color: @primary-light-green;
+                padding: 10px;
+                border-radius: @small-border-radius;
+                font: @body-font-emphasis;
+            }
+        }
+
+        .tourtoise_page_details_button{
+            button{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background-color: @primary-cream;
+                border: unset;
+                border-radius: @small-border-radius;
+                font: @body-font-emphasis;
+                padding: 10px;
+
+                svg{
+                    display: inline-block;
+                    transform: rotate(0deg);
+                    transition: transform 0.3s;
+                }
+
+                &:hover{
+                    background-color: @primary-dark-cream;
+                }
+
+                &.active{
+                    svg{
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+
+        
     }
 
     .tourtoise_page_details{
-        margin-top: 20px;
         background-color: @primary-cream;
         color: @primary-black;
         border-radius: @large-border-radius;
-        padding: 20px;
+        max-height: 0px;
+        padding: 0px 20px;
+        margin-top: unset;
+        overflow: hidden;
+
+        transition: max-height 0.5s, padding 0.5s, margin-top 0.8s;
+
+        &.active{
+            max-height: 100px;
+            padding: 20px;
+            margin-top: 20px;
+        }
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .tourtoise_page_intro_wrapper{
+        .tourtoise_page_details{
+            &.active{
+                max-height: 200px;
+            }
+        }
+    }
+}
+
+
+
+
+/* ===[ 7) Stop Cards ]===================================================== */

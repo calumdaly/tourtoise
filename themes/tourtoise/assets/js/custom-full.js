@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', function () {
     tourtoise.header();
     tourtoise.cardDetailsButton();
+    tourtoise.pageDetailsButtonClick();
   }, false);
 
 
@@ -32,7 +33,22 @@ window.addEventListener('DOMContentLoaded', function () {
 
             })
         });
-
-    }
+    },
     //END: CARD BUTTONS
+
+
+
+    //START: PAGE DETAILS BUTTONS
+    pageDetailsButtonClick: () => {
+      let pageDetailsButton = document.getElementById('page_detail_button');
+      if (pageDetailsButton){
+        pageDetailsButton.addEventListener('click', (e) => {
+          let pageDetailsContent = pageDetailsButton.parentElement.parentNode.parentNode.querySelector('.tourtoise_page_details');
+          pageDetailsButton.classList.toggle('active');
+          pageDetailsContent.classList.toggle('active');
+        });
+      }
+    }
+    
+    //END: PAGE DETAILS BUTTONS
   }

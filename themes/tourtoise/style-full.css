@@ -16,13 +16,15 @@ License: GNU General Public License v2 or later
 //
 // 2) Site Header
 //
-// 2) Homepage overrides
+// 3) Homepage overrides
 //
-// 3) Breadcrumbs
+// 4) Breadcrumbs
 //
-// 4) Content Cards
+// 5) Content Cards
 //
-// 5) Playlist Page
+// 6) Playlist Page
+//
+// 7) Stop Cards
 //
 //
 /*
@@ -289,36 +291,36 @@ html {
   font-size: 16px;
   min-width: 390px;
 }
-body {
+html body {
   font: 400 1rem/150% "Open Sans", 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: #89A1EF;
   color: #3A3A3A;
 }
-.tourtoise_main_content_wrapper {
+html .tourtoise_main_content_wrapper {
   max-width: 1140px;
   margin: auto;
   margin-top: 40px;
 }
-h1,
-h2,
-h3,
-h4 {
+html h1,
+html h2,
+html h3,
+html h4 {
   display: inline-block;
   margin-bottom: unset;
 }
-h1 {
+html h1 {
   font: 700 2.25rem "Outfit", 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-h2 {
+html h2 {
   font: 700 1.6rem "Open Sans", 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-h3 {
+html h3 {
   font: 600 1.2rem "Open Sans", 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-p {
+html p {
   font: 400 1rem 400 1rem/150% "Open Sans", 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-a {
+html a {
   display: inline-block;
   text-decoration: none;
   font: 600 1.2rem "Outfit", 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -327,13 +329,13 @@ a {
   padding: 15px 30px;
   border-radius: 10px;
 }
-a:hover {
+html a:hover {
   background-color: #A0C1B9;
 }
-img {
+html img {
   width: 100%;
 }
-.screen_reader_content {
+html .screen_reader_content {
   position: absolute;
   width: 1px;
   left: -10000px;
@@ -356,16 +358,17 @@ img {
   font: 700 2.25rem "Outfit", 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .tourtoise_header_wrapper .tourtoise_header .tourtoise_header_nav {
-  max-width: 350px;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 355px;
 }
 .tourtoise_header_wrapper .tourtoise_header .tourtoise_header_nav ul {
   display: -ms-flexbox;
   display: flex;
   list-style-type: none;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -ms-flex-pack: end;
+  justify-content: end;
+  gap: 20px;
   padding: unset;
   margin: unset;
 }
@@ -375,7 +378,7 @@ img {
 .tourtoise_header_nav_mobile_content_wrapper {
   display: none;
 }
-@media only screen and (max-width: 1040px) {
+@media only screen and (max-width: 1060px) {
   .tourtoise_header_wrapper .tourtoise_header .tourtoise_header_text {
     display: none;
   }
@@ -384,16 +387,8 @@ img {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-  }
-  .tourtoise_header_wrapper .tourtoise_header .tourtoise_header_nav ul {
-    display: -ms-flexbox;
-    display: flex;
-    gap: 20px;
-    list-style-type: none;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: unset;
-    margin: unset;
+    -ms-flex-pack: end;
+    justify-content: end;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -620,17 +615,71 @@ img {
   }
 }
 /* ===[ 6) Playlist Page ]===================================================== */
-.tourtoise_page_intro_wrapper .tourtoise_page_title h1 {
+.tourtoise_page_intro_wrapper .tourtoise_page_intro_top {
+  -ms-flex-align: end;
+  align-items: end;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.tourtoise_page_intro_wrapper .tourtoise_page_intro_top > div {
   display: inline-block;
+  width: auto;
+}
+.tourtoise_page_intro_wrapper .tourtoise_page_intro_top .tourtoise_page_title h1 {
   background-color: #FFFEF4;
   margin-bottom: unset;
   padding: 20px 40px;
   border-radius: 20px;
 }
+.tourtoise_page_intro_wrapper .tourtoise_page_intro_top .tourtoise_page_tour_duration span {
+  display: block;
+  background-color: #D4EDE7;
+  padding: 10px;
+  border-radius: 10px;
+  font: 600 1rem/150% "Open Sans", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.tourtoise_page_intro_wrapper .tourtoise_page_intro_top .tourtoise_page_details_button button {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #FFFEF4;
+  border: unset;
+  border-radius: 10px;
+  font: 600 1rem/150% "Open Sans", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 10px;
+}
+.tourtoise_page_intro_wrapper .tourtoise_page_intro_top .tourtoise_page_details_button button svg {
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: transform 0.3s;
+}
+.tourtoise_page_intro_wrapper .tourtoise_page_intro_top .tourtoise_page_details_button button:hover {
+  background-color: #EBEAE1;
+}
+.tourtoise_page_intro_wrapper .tourtoise_page_intro_top .tourtoise_page_details_button button.active svg {
+  transform: rotate(180deg);
+}
 .tourtoise_page_intro_wrapper .tourtoise_page_details {
-  margin-top: 20px;
   background-color: #FFFEF4;
   color: #3A3A3A;
   border-radius: 20px;
-  padding: 20px;
+  max-height: 0px;
+  padding: 0px 20px;
+  margin-top: unset;
+  overflow: hidden;
+  transition: max-height 0.5s, padding 0.5s, margin-top 0.8s;
 }
+.tourtoise_page_intro_wrapper .tourtoise_page_details.active {
+  max-height: 100px;
+  padding: 20px;
+  margin-top: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .tourtoise_page_intro_wrapper .tourtoise_page_details.active {
+    max-height: 200px;
+  }
+}
+/* ===[ 7) Stop Cards ]===================================================== */
