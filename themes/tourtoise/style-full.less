@@ -74,6 +74,7 @@ License: GNU General Public License v2 or later
 /* ===[ 1) General / Sitewide ]===================================================== */
 html{
     font-size: 16px;
+    min-width: 390px;
 }
 
 body {
@@ -89,6 +90,11 @@ body {
 }
 
 //headings + text elements
+h1, h2, h3, h4{
+    display: inline-block;
+    margin-bottom: unset;
+}
+
 h1{
     font:700 2.25rem @heading-font-family;
 }
@@ -156,7 +162,7 @@ img{
 
         //desktop nav
         .tourtoise_header_nav{
-            max-width: 380px;
+            max-width: 350px;
             align-items: center;
 
             ul{
@@ -407,24 +413,43 @@ img{
                 .row{
                     width: 100%;
                     justify-content: end;
-                    bottom: 0;
                 }
 
                 .tourtoise_content_card_copy{
                     div{
+                        display: inline-block;
                         width: auto;
+                        text-align: end;
                         margin-bottom: 10px;
                         background-color: @primary-cream;
                         border-radius: @small-border-radius;
                         padding: 10px;
                     }
+                }
 
-                    .tourtoise_content_card_copy_duration{
-                        background-color: @primary-light-green;
-                        font: @body-font-emphasis;
+                //playlist card copy
+                .tourtoise_content_card_copy_playlist{
+                    div{
+                        background-color: unset;
+                        width: 100%;
+                        padding: unset;
+                        padding-bottom: 10px;
+                        
+                        h2{
+                            background-color: @primary-cream;
+                            padding: 10px;
+                            border-radius: @small-border-radius;
+                        }
 
-                        svg{
-                            margin-right: 5px;
+                        .tourtoise_content_card_copy_duration{
+                            background-color: @primary-light-green;
+                            font: @body-font-emphasis;
+                            padding: 10px;
+                            border-radius: @small-border-radius;
+
+                            svg{
+                                margin-right: 5px;
+                            }
                         }
                     }
                 }

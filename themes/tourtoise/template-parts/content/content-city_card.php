@@ -18,6 +18,7 @@ Template Post Type: page, post
         <div class="tourtoise_content_card_copy row g-0">
             <div>
                 <h2><?php echo get_field('city_name'); ?></h2>
+                <br/>
                 <h3><?php echo get_field('country_name'); ?></h3>
             </div>
         </div>
