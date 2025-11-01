@@ -669,11 +669,31 @@ html{
                 font: @button-font;
 
                 &:nth-of-type(1){
-                    opacity: 1;
+                    color: @primary-black;
+
+                    svg{
+                        path{
+                            fill: @primary-black;
+
+                            transition: fill 0.3s;
+                        }
+                    }
+
+                    transition: color 0.3s;
                 }
 
                 &:nth-of-type(2){
-                    opacity: 0.5;
+                    color: @primary-purple;
+
+                    svg{
+                        path{
+                            fill: @primary-purple;
+
+                            transition: fill 0.3s;
+                        }
+                    }
+
+                    transition: color 0.3s;
                 }
             }
         }
@@ -697,11 +717,23 @@ html{
             .tourtoise_page_preferred_map_button_top{
                 span{
                     &:nth-of-type(1){
-                        opacity: 0.5;
+                        color: @primary-purple;
+
+                        svg{
+                            path{
+                                fill: @primary-purple;
+                            }
+                        }
                     }
 
                     &:nth-of-type(2){
-                        opacity: 1;
+                        color: @primary-black;
+
+                        svg{
+                            path{
+                                fill: @primary-black;
+                            }
+                        }
                     }
                 }
             }

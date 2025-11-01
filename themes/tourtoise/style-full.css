@@ -717,10 +717,20 @@ html .screen_reader_content {
   font: 600 1.2rem/150% "Outfit", 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .tourtoise_page_preferred_map_button_wrapper .tourtoise_page_preferred_map_button .tourtoise_page_preferred_map_button_top span:nth-of-type(1) {
-  opacity: 1;
+  color: #3A3A3A;
+  transition: color 0.3s;
+}
+.tourtoise_page_preferred_map_button_wrapper .tourtoise_page_preferred_map_button .tourtoise_page_preferred_map_button_top span:nth-of-type(1) svg path {
+  fill: #3A3A3A;
+  transition: fill 0.3s;
 }
 .tourtoise_page_preferred_map_button_wrapper .tourtoise_page_preferred_map_button .tourtoise_page_preferred_map_button_top span:nth-of-type(2) {
-  opacity: 0.5;
+  color: #706993;
+  transition: color 0.3s;
+}
+.tourtoise_page_preferred_map_button_wrapper .tourtoise_page_preferred_map_button .tourtoise_page_preferred_map_button_top span:nth-of-type(2) svg path {
+  fill: #706993;
+  transition: fill 0.3s;
 }
 .tourtoise_page_preferred_map_button_wrapper .tourtoise_page_preferred_map_button .tourtoise_page_preferred_map_button_bottom {
   position: absolute;
@@ -736,10 +746,16 @@ html .screen_reader_content {
   transition: width 0.5s, margin-left 0.5s;
 }
 .tourtoise_page_preferred_map_button_wrapper .tourtoise_page_preferred_map_button.active .tourtoise_page_preferred_map_button_top span:nth-of-type(1) {
-  opacity: 0.5;
+  color: #706993;
+}
+.tourtoise_page_preferred_map_button_wrapper .tourtoise_page_preferred_map_button.active .tourtoise_page_preferred_map_button_top span:nth-of-type(1) svg path {
+  fill: #706993;
 }
 .tourtoise_page_preferred_map_button_wrapper .tourtoise_page_preferred_map_button.active .tourtoise_page_preferred_map_button_top span:nth-of-type(2) {
-  opacity: 1;
+  color: #3A3A3A;
+}
+.tourtoise_page_preferred_map_button_wrapper .tourtoise_page_preferred_map_button.active .tourtoise_page_preferred_map_button_top span:nth-of-type(2) svg path {
+  fill: #3A3A3A;
 }
 .tourtoise_page_preferred_map_button_wrapper .tourtoise_page_preferred_map_button.active .tourtoise_page_preferred_map_button_bottom {
   margin-left: 50%;
