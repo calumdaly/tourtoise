@@ -11,9 +11,9 @@
 		<div class="tourtoise_header row g-0 px-3 px-xl-0">
 			<div class="tourtoise_header_logo col">
 				<a href="<?php echo get_home_url()?>">
-					<img aria-hidden="true" src="<?php echo get_template_directory_uri()?>/assets/images/tourtoise_logo_colour_text.svg"/>
+					<img aria-hidden="true" src="<?php echo get_template_directory_uri()?>/assets/images/tourtoise_logo_colour_text.svg" alt="TourToise - Free Audio Walking Tours"/>
 					<!-- logo for later: tourtoise_logo.svg -->
-					<h1 class="screen_reader_content">TourToise</h1>
+					<h1 class="screen_reader_content">TourToise - Free Audio Walking Tours</h1>
 				</a>
 			</div>
 

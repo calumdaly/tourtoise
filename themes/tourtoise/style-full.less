@@ -29,7 +29,9 @@ License: GNU General Public License v2 or later
 //
 // 6) Playlist Page
 //
-// 7) Stop Cards
+// 7) Playlist Page - Preferred Map Button
+//
+// 8) Stop Cards
 //
 //
 /*
@@ -49,6 +51,7 @@ License: GNU General Public License v2 or later
 @primary-font-family:"Open Sans",'Helvetica Neue',Helvetica,Arial,sans-serif;
 @body-font:400 1rem/150% @primary-font-family;
 @body-font-emphasis:600 1rem/150% @primary-font-family;
+@button-font: 600 1.2rem/150% @heading-font-family;
 
 //colour variables
 @primary-white: #fff;
@@ -115,7 +118,7 @@ html{
     a{
         display: inline-block;
         text-decoration: none;
-        font: 600 1.2rem @heading-font-family;
+        font: @button-font;
         color: @primary-black;
         background-color: @primary-light-green;
         padding: 15px 30px;
@@ -635,9 +638,6 @@ html{
     .tourtoise_page_intro_wrapper{
         .tourtoise_page_details_wrapper{
             .tourtoise_page_details_map{
-                border-radius: @large-border-radius;
-                overflow: hidden;
-
                 iframe{
                     height: 300px;
                 }
@@ -648,5 +648,71 @@ html{
 
 
 
+/* ===[ 7) Playlist Page - Preferred Map Button ]===================================================== */
+.tourtoise_page_preferred_map_button_wrapper{
+    margin-top: 20px;
+    .tourtoise_page_preferred_map_button{
+        position: relative;
+        border: solid 5px @primary-cream;
+        background-color: @primary-cream;
+        padding: 15px 20px;
+        border-radius: 999px;
+        overflow: hidden;
 
-/* ===[ 7) Stop Cards ]===================================================== */
+        .tourtoise_page_preferred_map_button_top{
+            position: relative;
+            z-index: 10;
+            display: flex;
+            gap:40px;
+
+            span{
+                font: @button-font;
+
+                &:nth-of-type(1){
+                    opacity: 1;
+                }
+
+                &:nth-of-type(2){
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        .tourtoise_page_preferred_map_button_bottom{
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 52%;
+            margin-left: 0%;
+            text-align: left;
+            border-radius: 999px;
+            background-color: @primary-pop-green;
+
+            transition: width 0.5s, margin-left 0.5s;
+        }
+
+        &.active{
+            .tourtoise_page_preferred_map_button_top{
+                span{
+                    &:nth-of-type(1){
+                        opacity: 0.5;
+                    }
+
+                    &:nth-of-type(2){
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .tourtoise_page_preferred_map_button_bottom{
+                margin-left: 50%;
+            }
+        }
+    }
+}
+
+
+
+/* ===[ 8) Stop Cards ]===================================================== */

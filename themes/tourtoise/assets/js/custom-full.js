@@ -2,6 +2,9 @@ window.addEventListener('DOMContentLoaded', function () {
     tourtoise.header();
     tourtoise.cardDetailsButton();
     tourtoise.pageDetailsButtonClick();
+
+    let globalPreferredMap = 'google'; //global map variable
+    tourtoise.playlistPreferredMapButtonClick(globalPreferredMap);
   }, false);
 
 
@@ -48,7 +51,35 @@ window.addEventListener('DOMContentLoaded', function () {
           pageDetailsContent.classList.toggle('active');
         });
       }
-    }
-    
+    },
     //END: PAGE DETAILS BUTTONS
+
+
+
+
+    //START: PLAYLIST PREFERRED MAP BUTTON
+    playlistPreferredMapButtonClick: (globalPreferredMap) => {
+      let playlistPreferredMapButton = document.getElementById('tourtoise_page_preferred_map_button');
+      if(playlistPreferredMapButton){
+        playlistPreferredMapButton.addEventListener('click', (e) => {
+          playlistPreferredMapButton.classList.toggle('active');
+
+          //set global map variable
+          if(globalPreferredMap === 'google'){
+            globalPreferredMap = 'apple';
+
+            //loop (map) through directions buttons. display none to all google buttons
+
+          } else {
+            globalPreferredMap = 'google';
+
+            //loop (map) through directions buttons. display none to all apple buttons
+
+          }
+
+
+        });
+      }
+    }
+    //END: PLAYLIST PREFERRED MAP BUTTON
   }
