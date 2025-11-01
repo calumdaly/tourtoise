@@ -28,8 +28,10 @@ get_header();
             </div>
         </div>
 
-        <div class="tourtoise_page_details row g-0">
-            <?php echo get_field('city_details_text'); ?>
+        <div class="tourtoise_page_details_wrapper row g-0">
+            <div class="tourtoise_page_details_copy row g-0">
+                <?php echo get_field('city_details_text'); ?>
+            </div>
         </div>
     </div>
     

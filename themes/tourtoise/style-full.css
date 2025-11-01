@@ -662,24 +662,38 @@ html .screen_reader_content {
 .tourtoise_page_intro_wrapper .tourtoise_page_intro_top .tourtoise_page_details_button button.active svg {
   transform: rotate(180deg);
 }
-.tourtoise_page_intro_wrapper .tourtoise_page_details {
-  background-color: #FFFEF4;
-  color: #3A3A3A;
-  border-radius: 20px;
+.tourtoise_page_intro_wrapper .tourtoise_page_details_wrapper {
   max-height: 0px;
   padding: 0px 20px;
-  margin-top: unset;
-  overflow: hidden;
-  transition: max-height 0.5s, padding 0.5s, margin-top 0.8s;
-}
-.tourtoise_page_intro_wrapper .tourtoise_page_details.active {
-  max-height: 100px;
-  padding: 20px;
   margin-top: 20px;
+  overflow: hidden;
+  background-color: #FFFEF4;
+  border-radius: 20px;
+  transition: max-height 0.7s, padding 0.7s;
+}
+.tourtoise_page_intro_wrapper .tourtoise_page_details_wrapper.active {
+  max-height: 600px;
+  padding: 20px;
+}
+.tourtoise_page_intro_wrapper .tourtoise_page_details_wrapper .tourtoise_page_details_copy {
+  color: #3A3A3A;
+}
+.tourtoise_page_intro_wrapper .tourtoise_page_details_wrapper .tourtoise_page_details_map {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 20px;
+  background-color: #D4EDE7;
+}
+.tourtoise_page_intro_wrapper .tourtoise_page_details_wrapper .tourtoise_page_details_map iframe {
+  height: 400px;
 }
 @media only screen and (max-width: 768px) {
-  .tourtoise_page_intro_wrapper .tourtoise_page_details.active {
-    max-height: 200px;
+  .tourtoise_page_intro_wrapper .tourtoise_page_details_wrapper .tourtoise_page_details_map {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .tourtoise_page_intro_wrapper .tourtoise_page_details_wrapper .tourtoise_page_details_map iframe {
+    height: 300px;
   }
 }
 /* ===[ 7) Stop Cards ]===================================================== */

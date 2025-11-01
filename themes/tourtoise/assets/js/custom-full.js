@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', function () {
       let pageDetailsButton = document.getElementById('page_detail_button');
       if (pageDetailsButton){
         pageDetailsButton.addEventListener('click', (e) => {
-          let pageDetailsContent = pageDetailsButton.parentElement.parentNode.parentNode.querySelector('.tourtoise_page_details');
+          let pageDetailsContent = pageDetailsButton.parentElement.parentNode.parentNode.parentNode.querySelector('.tourtoise_page_details_wrapper');
           pageDetailsButton.classList.toggle('active');
           pageDetailsContent.classList.toggle('active');
         });

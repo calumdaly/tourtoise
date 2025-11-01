@@ -599,30 +599,48 @@ html{
         
     }
 
-    .tourtoise_page_details{
-        background-color: @primary-cream;
-        color: @primary-black;
-        border-radius: @large-border-radius;
+    .tourtoise_page_details_wrapper{
         max-height: 0px;
         padding: 0px 20px;
-        margin-top: unset;
+        margin-top: 20px;
         overflow: hidden;
+        background-color: @primary-cream;
+        border-radius: @large-border-radius;
 
-        transition: max-height 0.5s, padding 0.5s, margin-top 0.8s;
+        transition: max-height 0.7s, padding 0.7s;
 
         &.active{
-            max-height: 100px;
+            max-height: 600px;
             padding: 20px;
+        }
+
+        .tourtoise_page_details_copy{
+            color: @primary-black;
+        }
+
+        .tourtoise_page_details_map{
+            border-radius: @large-border-radius;
+            overflow: hidden;
             margin-top: 20px;
+            background-color: @primary-light-green;
+
+            iframe{
+                height: 400px;
+            }
         }
     }
 }
 
 @media only screen and (max-width: 768px) {
     .tourtoise_page_intro_wrapper{
-        .tourtoise_page_details{
-            &.active{
-                max-height: 200px;
+        .tourtoise_page_details_wrapper{
+            .tourtoise_page_details_map{
+                border-radius: @large-border-radius;
+                overflow: hidden;
+
+                iframe{
+                    height: 300px;
+                }
             }
         }
     }
